@@ -1,0 +1,767 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: "Segoe UI", Arial, sans-serif;
+  background: #07111f;
+  color: white;
+}
+
+#root {
+  min-height: 100vh;
+}
+
+/* Main page */
+
+.app-container {
+  min-height: 100vh;
+  padding: 45px 20px;
+  text-align: center;
+  background:
+    radial-gradient(circle at 15% 20%, rgba(0, 255, 170, 0.12), transparent 25%),
+    radial-gradient(circle at 85% 80%, rgba(0, 140, 255, 0.12), transparent 25%),
+    #07111f;
+}
+
+/* Logo / Title */
+
+.app-title {
+  margin: 0;
+  font-size: 42px;
+  font-weight: 700;
+  letter-spacing: 2px;
+  color: #ffffff;
+}
+
+.app-title::before {
+  content: "◉ ";
+  color: #00e6a0;
+}
+
+.app-subtitle {
+  margin-top: 8px;
+  margin-bottom: 35px;
+  color: #91a4b8;
+  font-size: 16px;
+}
+
+/* Navigation */
+
+.nav-buttons {
+  margin-bottom: 30px;
+}
+
+.nav-buttons button {
+  padding: 12px 25px;
+  margin: 0 6px;
+  border: 1px solid #263c52;
+  border-radius: 30px;
+  background: #0d1c2c;
+  color: #b9c8d8;
+  font-size: 15px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.nav-buttons button:hover {
+  border-color: #00e6a0;
+  color: #00e6a0;
+  box-shadow: 0 0 18px rgba(0, 230, 160, 0.15);
+}
+
+/* Login card */
+
+.login-card {
+  width: 410px;
+  max-width: 95%;
+  margin: auto;
+  padding: 38px;
+  text-align: left;
+
+  background: rgba(13, 28, 44, 0.88);
+  border: 1px solid #263c52;
+  border-radius: 20px;
+
+  box-shadow:
+    0 20px 50px rgba(0, 0, 0, 0.4),
+    inset 0 0 30px rgba(0, 230, 160, 0.02);
+}
+
+/* Login heading */
+
+.login-card h2 {
+  margin-top: 0;
+  margin-bottom: 8px;
+  color: #ffffff;
+  font-size: 27px;
+}
+
+.login-card h2::after {
+  content: "";
+  display: block;
+  width: 45px;
+  height: 3px;
+  margin-top: 10px;
+  background: #00e6a0;
+  border-radius: 5px;
+}
+
+/* Inputs */
+
+.login-card input {
+  width: 100%;
+  padding: 14px 15px;
+  margin-top: 18px;
+
+  background: #081522;
+  color: white;
+
+  border: 1px solid #263c52;
+  border-radius: 10px;
+
+  outline: none;
+  font-size: 15px;
+}
+
+.login-card input::placeholder {
+  color: #687d91;
+}
+
+.login-card input:focus {
+  border-color: #00e6a0;
+  box-shadow: 0 0 12px rgba(0, 230, 160, 0.12);
+}
+
+/* Login button */
+
+.login-card button {
+  width: 100%;
+  margin-top: 20px;
+  padding: 14px;
+
+  border: none;
+  border-radius: 10px;
+
+  background: #00e6a0;
+  color: #06121d;
+
+  font-size: 16px;
+  font-weight: 700;
+
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.login-card button:hover {
+  background: #12ffb5;
+  box-shadow: 0 0 20px rgba(0, 230, 160, 0.3);
+  transform: translateY(-2px);
+}
+
+/* Message */
+
+.message {
+  text-align: center;
+  color: #91a4b8;
+  margin-top: 18px;
+}
+/* ============================= */
+/* STUDENT DASHBOARD              */
+/* ============================= */
+
+.dashboard {
+  max-width: 1000px;
+  margin: 30px auto;
+  text-align: left;
+}
+
+.dashboard-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 30px;
+  background: #0d1c2c;
+  border: 1px solid #263c52;
+  border-radius: 18px;
+  margin-bottom: 20px;
+}
+
+.dashboard-label {
+  color: #00e6a0;
+  font-size: 12px;
+  font-weight: bold;
+  letter-spacing: 2px;
+  margin: 0 0 8px;
+}
+
+.dashboard-header h1 {
+  margin: 0;
+  font-size: 30px;
+}
+
+.dashboard-subtitle {
+  color: #91a4b8;
+  margin-bottom: 0;
+}
+
+.student-badge {
+  padding: 10px 18px;
+  border-radius: 20px;
+  background: rgba(0, 230, 160, 0.1);
+  border: 1px solid #00e6a0;
+  color: #00e6a0;
+  font-weight: bold;
+}
+
+.student-info {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 20px;
+  margin-bottom: 20px;
+}
+
+.info-card {
+  padding: 22px;
+  background: #0d1c2c;
+  border: 1px solid #263c52;
+  border-radius: 15px;
+}
+
+.info-card span {
+  display: block;
+  color: #71869b;
+  font-size: 13px;
+  margin-bottom: 8px;
+}
+
+.info-card strong {
+  color: white;
+  font-size: 17px;
+}
+
+.attendance-card {
+  text-align: center;
+  padding: 40px;
+  background: #0d1c2c;
+  border: 1px solid #263c52;
+  border-radius: 18px;
+  margin-bottom: 20px;
+}
+
+.attendance-icon {
+  font-size: 45px;
+  margin-bottom: 10px;
+}
+
+.attendance-card h2 {
+  margin: 5px 0;
+}
+
+.attendance-card p {
+  color: #91a4b8;
+}
+
+.attendance-button {
+  margin-top: 15px;
+  padding: 14px 30px;
+  border: none;
+  border-radius: 10px;
+  background: #00e6a0;
+  color: #06121d;
+  font-size: 16px;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.attendance-button:hover {
+  box-shadow: 0 0 20px rgba(0, 230, 160, 0.3);
+  transform: translateY(-2px);
+}
+
+.attendance-button:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+.attendance-message {
+  margin-top: 18px;
+  color: #00e6a0;
+  font-weight: bold;
+}
+
+.history-section {
+  padding: 30px;
+  background: #0d1c2c;
+  border: 1px solid #263c52;
+  border-radius: 18px;
+}
+
+.history-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+.history-header h2 {
+  margin: 0;
+}
+
+.refresh-button {
+  padding: 10px 18px;
+  border: 1px solid #263c52;
+  border-radius: 8px;
+  background: #081522;
+  color: #b9c8d8;
+  cursor: pointer;
+}
+
+.refresh-button:hover {
+  border-color: #00e6a0;
+  color: #00e6a0;
+}
+
+.table-container {
+  overflow-x: auto;
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+th {
+  padding: 14px;
+  text-align: left;
+  color: #71869b;
+  border-bottom: 1px solid #263c52;
+}
+
+td {
+  padding: 15px;
+  color: #d8e1e9;
+  border-bottom: 1px solid #1b3044;
+}
+
+.status-present {
+  color: #00e6a0;
+  font-weight: bold;
+}
+
+.empty-state {
+  text-align: center;
+  padding: 35px;
+  color: #71869b;
+}
+
+.empty-state div {
+  font-size: 35px;
+}
+
+.empty-state p {
+  margin-bottom: 5px;
+}
+
+/* Mobile */
+
+@media (max-width: 600px) {
+  .dashboard-header {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 20px;
+  }
+
+  .student-info {
+    grid-template-columns: 1fr;
+  }
+
+  .history-header {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 15px;
+  }
+}
+/* ============================= */
+/* ADMIN DASHBOARD                */
+/* ============================= */
+
+.admin-dashboard {
+  max-width: 1100px;
+  margin: 30px auto;
+  text-align: left;
+}
+
+/* Admin Header */
+
+.admin-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 35px;
+  background: #0d1c2c;
+  border: 1px solid #263c52;
+  border-radius: 18px;
+  margin-bottom: 20px;
+}
+
+.admin-header h1 {
+  margin: 0;
+  font-size: 32px;
+}
+
+.admin-badge {
+  padding: 10px 18px;
+  border-radius: 20px;
+  background: rgba(0, 230, 160, 0.1);
+  border: 1px solid #00e6a0;
+  color: #00e6a0;
+  font-weight: bold;
+  white-space: nowrap;
+}
+
+/* Statistics */
+
+.admin-stats {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+  margin-bottom: 20px;
+}
+
+.stat-card {
+  padding: 25px;
+  background: #0d1c2c;
+  border: 1px solid #263c52;
+  border-radius: 16px;
+  transition: 0.3s;
+}
+
+.stat-card:hover {
+  border-color: #00e6a0;
+  transform: translateY(-3px);
+}
+
+.stat-card span {
+  display: block;
+  color: #71869b;
+  font-size: 14px;
+  margin-bottom: 10px;
+}
+
+.stat-card strong {
+  display: block;
+  color: #ffffff;
+  font-size: 28px;
+  margin-bottom: 6px;
+}
+
+.stat-card small {
+  color: #91a4b8;
+}
+
+/* Attendance Records */
+
+.admin-records {
+  padding: 30px;
+  background: #0d1c2c;
+  border: 1px solid #263c52;
+  border-radius: 18px;
+}
+
+.admin-records-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 25px;
+}
+
+.admin-records-header h2 {
+  margin: 0;
+  font-size: 24px;
+}
+
+.admin-message {
+  text-align: center;
+  color: #91a4b8;
+  padding: 20px;
+}
+
+/* Admin table */
+
+.admin-records table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.admin-records th {
+  padding: 15px;
+  text-align: left;
+  color: #71869b;
+  font-size: 13px;
+  letter-spacing: 0.5px;
+  border-bottom: 1px solid #263c52;
+}
+
+.admin-records td {
+  padding: 16px 15px;
+  color: #d8e1e9;
+  border-bottom: 1px solid #1b3044;
+}
+
+.admin-records tbody tr:hover {
+  background: rgba(0, 230, 160, 0.03);
+}
+
+/* Present status */
+
+.admin-records .status-present {
+  color: #00e6a0;
+  font-weight: bold;
+}
+
+/* Mobile */
+
+@media (max-width: 700px) {
+
+  .admin-header {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 20px;
+  }
+
+  .admin-stats {
+    grid-template-columns: 1fr;
+  }
+
+  .admin-records-header {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 15px;
+  }
+}
+/* ============================= */
+/* STUDENT ATTENDANCE STATISTICS */
+/* ============================= */
+
+.attendance-stats {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+  margin-bottom: 20px;
+}
+
+.attendance-stat-card {
+  padding: 25px;
+  background: #0d1c2c;
+  border: 1px solid #263c52;
+  border-radius: 16px;
+  transition: 0.3s;
+}
+
+.attendance-stat-card:hover {
+  border-color: #00e6a0;
+  transform: translateY(-3px);
+}
+
+.attendance-stat-card span {
+  display: block;
+  color: #71869b;
+  font-size: 14px;
+  margin-bottom: 10px;
+}
+
+.attendance-stat-card strong {
+  display: block;
+  color: #ffffff;
+  font-size: 28px;
+  margin-bottom: 6px;
+}
+
+.attendance-stat-card small {
+  color: #91a4b8;
+}
+
+
+@media (max-width: 700px) {
+
+  .attendance-stats {
+    grid-template-columns: 1fr;
+  }
+
+}
+/* ============================= */
+/* ADMIN FILTERS                 */
+/* ============================= */
+
+.admin-filters {
+  display: flex;
+  gap: 12px;
+  margin-bottom: 25px;
+  flex-wrap: wrap;
+}
+
+.admin-filters input {
+  padding: 12px 14px;
+  background: #081522;
+  color: white;
+  border: 1px solid #263c52;
+  border-radius: 9px;
+  outline: none;
+  font-size: 14px;
+}
+
+.admin-filters input:focus {
+  border-color: #00e6a0;
+}
+
+.admin-filters input[type="text"] {
+  flex: 1;
+  min-width: 220px;
+}
+
+.admin-filters input[type="date"] {
+  color-scheme: dark;
+}
+
+.filter-button,
+.clear-button {
+  padding: 12px 18px;
+  border-radius: 9px;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.filter-button {
+  border: none;
+  background: #00e6a0;
+  color: #06121d;
+}
+
+.filter-button:hover {
+  box-shadow: 0 0 15px rgba(0, 230, 160, 0.3);
+}
+
+.clear-button {
+  background: #081522;
+  color: #b9c8d8;
+  border: 1px solid #263c52;
+}
+
+.clear-button:hover {
+  border-color: #00e6a0;
+  color: #00e6a0;
+}
+
+.status-absent {
+  color: #ff5c5c;
+  font-weight: bold;
+}
+
+
+/* Mobile */
+
+@media (max-width: 700px) {
+
+  .admin-filters {
+    flex-direction: column;
+  }
+
+  .admin-filters input,
+  .filter-button,
+  .clear-button {
+    width: 100%;
+  }
+
+}
+/* ============================= */
+/* STUDENT MANAGEMENT             */
+/* ============================= */
+
+.student-management {
+  margin-top: 20px;
+}
+
+.student-count {
+  padding: 10px 16px;
+  border-radius: 20px;
+  background: rgba(0, 230, 160, 0.08);
+  border: 1px solid #263c52;
+  color: #00e6a0;
+  font-weight: bold;
+}
+
+.student-management table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.student-management th {
+  padding: 15px;
+  text-align: left;
+  color: #71869b;
+  font-size: 13px;
+  border-bottom: 1px solid #263c52;
+}
+
+.student-management td {
+  padding: 16px 15px;
+  color: #d8e1e9;
+  border-bottom: 1px solid #1b3044;
+}
+
+.student-management tbody tr:hover {
+  background: rgba(0, 230, 160, 0.03);
+}
+/* ============================= */
+/* ATTENDANCE REPORTS            */
+/* ============================= */
+
+.attendance-reports {
+  margin-top: 20px;
+}
+
+.attendance-reports table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.attendance-reports th {
+  padding: 15px;
+  text-align: left;
+  color: #71869b;
+  font-size: 13px;
+  border-bottom: 1px solid #263c52;
+}
+
+.attendance-reports td {
+  padding: 16px 15px;
+  color: #d8e1e9;
+  border-bottom: 1px solid #1b3044;
+}
+
+.attendance-reports tbody tr:hover {
+  background: rgba(0, 230, 160, 0.03);
+}
+
+.attendance-percentage {
+  color: #00e6a0;
+  font-size: 16px;
+}
+/* Attendance Message Colors */
+
+.attendance-message {
+  margin-top: 18px;
+  color: #00e6a0;
+  font-weight: bold;
+}
+
+.message-absent {
+  color: #ff5c5c;
+}
+
+.message-warning {
+  color: #ffb84d;
+}
